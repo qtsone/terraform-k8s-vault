@@ -5,6 +5,8 @@ on:
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
     - name: checkout
       uses: actions/checkout@v4
