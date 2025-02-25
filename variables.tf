@@ -2,11 +2,11 @@ variable "config" {
   description = "(Required) Module configuration"
   type = object({
     # (Required) Kubernetes API Hostname.
-    kubernetes_host   = string
-    cluster_issuer = optional(string, "kubernetes/serviceaccount")
+    kubernetes_host = string
+    cluster_issuer  = optional(string, "kubernetes/serviceaccount")
 
     #(Required) Vault Auth Backend Path
-    auth_backend   = string
+    auth_backend = string
 
     # (Optional) ServiceAccount Name
     service_account = optional(string, "vault-auth")
