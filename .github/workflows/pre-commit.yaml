@@ -1,11 +1,15 @@
-name: Pre-commit checks
+name: PR Checks
+
 on:
-  - pull_request
+  pull_request:
+    branches: [ main ]
 
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
     permissions:
+      contents: write
+      issues: write
       pull-requests: write
     steps:
     - name: checkout
