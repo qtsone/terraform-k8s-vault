@@ -1,21 +1,21 @@
 resource "kubernetes_service_account" "vault_auth" {
-  automount_service_account_token = true
   metadata {
     name      = var.config.service_account
     namespace = var.config.namespace
   }
+  automount_service_account_token = true
 }
 
 resource "kubernetes_secret" "vault_auth" {
-  type                           = "kubernetes.io/service-account-token"
-  wait_for_service_account_token = true
   metadata {
-    name      = "${var.config.service_account}-secret"
+    name      = "${var.config.service_account}-token"
     namespace = var.config.namespace
     annotations = {
       "kubernetes.io/service-account.name" = var.config.service_account
     }
   }
+  type                           = "kubernetes.io/service-account-token"
+  wait_for_service_account_token = true
 }
 
 resource "kubernetes_cluster_role_binding" "vault_auth" {
@@ -45,6 +45,7 @@ resource "vault_kubernetes_auth_backend_config" "kubernetes" {
   issuer                 = var.config.cluster_issuer
   kubernetes_ca_cert     = kubernetes_secret.vault_auth.data["ca.crt"]
   token_reviewer_jwt     = kubernetes_secret.vault_auth.data["token"]
+  disable_local_ca_jwt   = true
   disable_iss_validation = true
 }
 
