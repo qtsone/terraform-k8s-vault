@@ -1,5 +1,20 @@
 # terraform-k8s-vault
 
+Terraform module to configure the Vault Kubernetes authentication method, enabling Kubernetes pods to authenticate with HashiCorp Vault using service account tokens.
+
+## Features
+
+- Creates a dedicated Kubernetes ServiceAccount for Vault authentication
+- Sets up appropriate RBAC permissions via ClusterRoleBinding
+- Configures Vault's Kubernetes auth backend with the necessary JWT reviewer credentials
+- Creates role bindings to control which service accounts can authenticate
+- Establishes policies for authenticated entities
+- Optionally creates a KV-v2 secrets engine
+
+## Overview
+
+This module streamlines the integration between Kubernetes and Vault by managing all the necessary components on both sides. When properly configured, Kubernetes pods can obtain Vault secrets using their service account identity without needing to manage separate credentials.
+
 <!-- BEGIN_TF_DOCS -->
 [![semantic-release-badge]][semantic-release]
 
