@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.1.0](https://github.com/qtsone/terraform-k8s-vault/compare/v1.0.0...v1.1.0) (2025-04-16)
+
+
+### Bug Fixes
+
+* bump terraform-docs version ([153edbd](https://github.com/qtsone/terraform-k8s-vault/commit/153edbd622009e6742a1eae07a53fd9ed4105e3c))
+* update path construction ([61e6b17](https://github.com/qtsone/terraform-k8s-vault/commit/61e6b1795e825a0e1376539f8dce1932361a35df))
+
+
+### Features
+
+* limit bound SA name and namespaces ([fe81df9](https://github.com/qtsone/terraform-k8s-vault/commit/fe81df94396185e502bc4070770692d2646c066e))
+
 # 1.0.0 (2025-02-25)
 
 
