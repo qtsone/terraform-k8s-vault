@@ -20,10 +20,10 @@ variable "config" {
     # (Required) List of SA names that this role is bound to.
     # It serves as a filter so that only the specified SA are able to authenticate under this role.
     # The use of wildcard patterns allows for matching multiple service accounts that follow a naming convention.
-    bound_sa_names = optional(list(string), ["*"])
+    bound_sa_names = optional(list(string), ["argo*"])
 
     # (Required) Restricts authentication to SA in the specified namespaces. Wildcards can be used
-    bound_sa_namespaces = optional(list(string), [""])
+    bound_sa_namespaces = optional(list(string), ["argo*"])
 
     # (Optional) Additional policies assigned to this role.
     policies = optional(list(object({
