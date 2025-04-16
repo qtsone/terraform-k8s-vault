@@ -5,15 +5,15 @@ locals {
       capabilities = ["create", "read", "update", "delete", "list"]
     },
     {
-      path         = "/auth/${var.config.auth_backend}/*"
+      path         = "auth/${var.config.auth_backend}/*"
       capabilities = ["create", "read", "update", "delete", "list"]
     },
     {
-      path         = "infra/data/argo*"
-      capabilities = ["read"]
+      path         = "${var.config.secret_backend}/data/*"
+      capabilities = ["read", "list"]
     },
     {
-      path         = "infra/metadata/argo*"
+      path         = "${var.config.secret_backend}/metadata/*"
       capabilities = ["list"]
     }
   ]
