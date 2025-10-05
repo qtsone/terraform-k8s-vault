@@ -27,7 +27,7 @@ Basic usage of this module:
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.5 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5 |
 | <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | ~> 2.35 |
 | <a name="requirement_vault"></a> [vault](#requirement\_vault) | ~> 4.6 |
 ## Resources
